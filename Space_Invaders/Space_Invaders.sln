@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Space_Invaders", "Space_Invaders\Space_Invaders.csproj", "{E8F480FF-A353-468D-835D-EC636F8A62AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testClass", "testClass\testClass.csproj", "{E92B3BCD-C94F-4775-BC9F-67484852DC18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{4EEDC0DF-ABFE-4AD7-842E-4628621A4D8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{E8F480FF-A353-468D-835D-EC636F8A62AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8F480FF-A353-468D-835D-EC636F8A62AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8F480FF-A353-468D-835D-EC636F8A62AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E92B3BCD-C94F-4775-BC9F-67484852DC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E92B3BCD-C94F-4775-BC9F-67484852DC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E92B3BCD-C94F-4775-BC9F-67484852DC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E92B3BCD-C94F-4775-BC9F-67484852DC18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EEDC0DF-ABFE-4AD7-842E-4628621A4D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EEDC0DF-ABFE-4AD7-842E-4628621A4D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EEDC0DF-ABFE-4AD7-842E-4628621A4D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EEDC0DF-ABFE-4AD7-842E-4628621A4D8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

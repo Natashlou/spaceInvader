@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 namespace Space_Invaders
 {
     class Player
-    {
+    { 
+        public Player()
+        { 
+
+        }
     }
 }

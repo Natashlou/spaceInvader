@@ -1,12 +1,11 @@
-﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Space_Invaders;
 
-namespace testClass
+namespace UnitTest
 {
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-
+        
     }
 }

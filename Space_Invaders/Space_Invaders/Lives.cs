@@ -8,5 +8,7 @@ namespace Space_Invaders
 {
     class Lives
     {
+        int _maxLives;
+
     }
 }
