@@ -11,29 +11,12 @@ namespace Space_Invaders
     {
         static void Main(string[] args)
         {
-            int x = 0;
-            int y = 2;
+
             
             Menu m = new Menu();
-            m.DrawMenu(x, y);
+            m.DrawMenu(0, 2);
             ConsoleKey key = Console.ReadKey().Key;
-
-            while (key != ConsoleKey.Enter)
-            {
-                if (key == ConsoleKey.DownArrow && y != 5)
-                {
-                    
-                    Console.Clear();
-                    y = y + 1;
-                    m.DrawMenu(x, y);
-                }
-                else if (key == ConsoleKey.UpArrow && y != 2)
-                {
-                    Console.Clear();
-                    y = y - 1;
-                    m.DrawMenu(x, y);
-                }
-            } 
+            m.UpOrDown(key);
 
         }
     }

@@ -8,8 +8,9 @@ namespace Space_Invaders
 {
     class Menu
     {
-        
-       public Menu()
+        private int x = 0;
+        private int y = 2;
+        public Menu()
         {
             
         } 
@@ -27,8 +28,27 @@ namespace Space_Invaders
 
         public void UpOrDown(ConsoleKey key)
         {
-            
-                
+            while (key != ConsoleKey.Enter)
+            {
+                if (key == ConsoleKey.DownArrow && y < 5)
+                {
+                    Console.Clear();
+                    y++;
+                    DrawMenu(x, y);
+                }
+                else if (key == ConsoleKey.UpArrow && y > 2)
+                {
+                    Console.Clear();
+                    y--;
+                    DrawMenu(x, y);
+                }
+                else
+                {
+                    Console.Clear();
+                    DrawMenu(x, y);
+                }
+                key = Console.ReadKey().Key;
+            }
         }
     }
 }
