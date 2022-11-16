@@ -15,8 +15,6 @@ namespace Space_Invaders
             
             Menu m = new Menu();
             m.DrawMenu(0, 2);
-            ConsoleKey key = Console.ReadKey().Key;
-            m.UpOrDown(key);
 
         }
     }
