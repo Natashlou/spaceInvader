@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Space_Invaders
 {
@@ -14,7 +15,45 @@ namespace Space_Invaders
         public Menu()
         {
             
-        } 
+        }
+
+        public void IntroduceFleet()
+        {
+            Console.Clear();
+            string line = "Hello! congrats on finding the secret key to my game!\n";
+            string line1 = "I made this game for a school projet and I had to add somthing original so here it is.\n";
+            string line2 = "this does not have any impact on the game, it's just for fun :D\n";
+            string control = "Press any key to exit!\n";
+
+            Console.SetCursorPosition(5, 6);
+            for (int i = 0; i < line.Length; i++)
+            {
+                Console.Write(line[i]);
+                Thread.Sleep(60);
+            }
+            Console.SetCursorPosition(5, 8);
+            for (int i = 0; i < line1.Length; i++)
+            {
+                Console.Write(line1[i]);
+                Thread.Sleep(60);
+            }
+            Console.SetCursorPosition(5, 10);
+            for (int i = 0; i < line2.Length; i++)
+            {
+                Console.Write(line2[i]);
+                Thread.Sleep(60);
+            }
+            Console.SetCursorPosition(5, 12);
+            for (int i = 0; i < control.Length; i++)
+            {
+                Console.Write(control[i]);
+                Thread.Sleep(60);
+            }
+            Console.SetCursorPosition(5, 13);
+            Console.ReadKey();
+            DrawMenu(x, y);
+            Thread.Sleep(1000);
+        }
 
         public void DrawMenu(int x, int y)
         {
@@ -53,6 +92,14 @@ namespace Space_Invaders
         }
         public void UpOrDown(ConsoleKey key)
         {
+            /*
+             * What each of the numbers mean in console
+             * 2. Play
+             * 3. Help
+             * 4. Scores
+             * 5. Settings/Exit 
+             */
+
             while (key != ConsoleKey.Enter)
             {
                 if (key == ConsoleKey.DownArrow && y < 5)
@@ -65,7 +112,11 @@ namespace Space_Invaders
                     y--;
                     DrawMenu(x, y);
                 }
-                else
+                else if(key == ConsoleKey.N)
+                {
+                    IntroduceFleet();
+                }
+                else 
                 {
                     DrawMenu(x, y);
                 }
