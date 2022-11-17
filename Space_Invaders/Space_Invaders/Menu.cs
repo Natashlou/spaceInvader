@@ -26,8 +26,8 @@ namespace Space_Invaders
             Console.WriteLine("   Settings-Exit");
             Console.SetCursorPosition(x, y);
             Console.Write("->");
-            
-            UpOrDown();
+            ConsoleKey key = Console.ReadKey().Key;
+            UpOrDown(key);
         }
 
         public void DrawMenuHelp()
@@ -51,10 +51,8 @@ namespace Space_Invaders
             }
                 
         }
-        public void UpOrDown()
+        public void UpOrDown(ConsoleKey key)
         {
-            ConsoleKey key = Console.ReadKey().Key;
-
             while (key != ConsoleKey.Enter)
             {
                 if (key == ConsoleKey.DownArrow && y < 5)
@@ -71,9 +69,8 @@ namespace Space_Invaders
                 {
                     DrawMenu(x, y);
                 }
-
-
                 enter = true;
+                break;
             }
 
             if (enter == true && y == 3)
