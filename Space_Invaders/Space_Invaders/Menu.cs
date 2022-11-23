@@ -116,7 +116,17 @@ namespace Space_Invaders
                 {
                     IntroduceFleet();
                 }
-                else 
+                else if(key == ConsoleKey.UpArrow && y == 2)
+                {
+                    y = 5;
+                    DrawMenu(x, y);
+                }
+                else if (key == ConsoleKey.DownArrow && y == 5)
+                {
+                    y = 2;
+                    DrawMenu(x, y);
+                }
+                else
                 {
                     DrawMenu(x, y);
                 }
