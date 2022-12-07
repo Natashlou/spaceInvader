@@ -93,7 +93,7 @@ namespace Space_Invaders
         public void UpOrDown(ConsoleKey key)
         {
             /*
-             * What each of the numbers mean in console
+             * numbers meaning
              * 2. Play
              * 3. Help
              * 4. Scores
@@ -141,6 +141,20 @@ namespace Space_Invaders
             else if(enter == true && y == 5)
             {
                 
+            }
+            else if (enter == true && y == 2)
+            {
+                Console.Clear();
+                Alien.ScreenSettings();
+                Alien a = new Alien(1, 7);
+                for (int i = 0; i < 50; i++)
+                {
+                    a.x = i;
+                    a.Draw();
+                    Thread.Sleep(100);
+                }
+
+                Console.Read();
             }
         }
     }
