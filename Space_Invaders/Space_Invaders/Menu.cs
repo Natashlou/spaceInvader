@@ -16,19 +16,13 @@ namespace Space_Invaders
         {
 
         }
-        public static void GameScreenSettings()
+        public static void ScreenSettings(int x, int y)
         {
             Console.CursorVisible = false;
-            Console.BufferHeight = Console.WindowHeight = 50;
-            Console.BufferWidth = Console.WindowWidth = 110;
+            Console.BufferHeight = Console.WindowHeight = x;
+            Console.BufferWidth = Console.WindowWidth = y;
         }
 
-        public static void MenuScreenSettings()
-        {
-            Console.CursorVisible = false;
-            Console.BufferHeight = Console.WindowHeight = 20;
-            Console.BufferWidth = Console.WindowWidth = 50;
-        }
         public void IntroduceFleet()
         {
             Console.Clear();
@@ -84,6 +78,7 @@ namespace Space_Invaders
         public void DrawMenuHelp()
         {
             Console.Clear();
+            ScreenSettings(25, 65);
             Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             Console.WriteLine("                    ║  ║  ╔══  ║    ╔══╗                     ");
             Console.WriteLine("                    ╠══╣  ╠══  ║    ╠══╝                     ");
@@ -155,7 +150,7 @@ namespace Space_Invaders
             else if (enter == true && y == 2)
             {
                 Console.Clear();
-                GameScreenSettings();
+                ScreenSettings(50, 110);
                 Alien a = new Alien(1, 1);
                 Lives l = new Lives(3);
                 l.setLives(1);
