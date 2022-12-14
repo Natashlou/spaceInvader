@@ -14,9 +14,21 @@ namespace Space_Invaders
         private bool enter;
         public Menu()
         {
-            
+
+        }
+        public static void GameScreenSettings()
+        {
+            Console.CursorVisible = false;
+            Console.BufferHeight = Console.WindowHeight = 50;
+            Console.BufferWidth = Console.WindowWidth = 110;
         }
 
+        public static void MenuScreenSettings()
+        {
+            Console.CursorVisible = false;
+            Console.BufferHeight = Console.WindowHeight = 20;
+            Console.BufferWidth = Console.WindowWidth = 50;
+        }
         public void IntroduceFleet()
         {
             Console.Clear();
@@ -88,7 +100,7 @@ namespace Space_Invaders
             {
                 DrawMenu(x, y);
             }
-                
+
         }
         public void UpOrDown(ConsoleKey key)
         {
@@ -112,18 +124,16 @@ namespace Space_Invaders
                     y--;
                     DrawMenu(x, y);
                 }
-                else if(key == ConsoleKey.N)
+                else if (key == ConsoleKey.N)
                 {
                     IntroduceFleet();
                 }
-                else if(key == ConsoleKey.UpArrow && y == 2)
+                else if (key == ConsoleKey.UpArrow && y == 2)
                 {
-                    y = 5;
                     DrawMenu(x, y);
                 }
                 else if (key == ConsoleKey.DownArrow && y == 5)
                 {
-                    y = 2;
                     DrawMenu(x, y);
                 }
                 else
@@ -138,19 +148,36 @@ namespace Space_Invaders
             {
                 DrawMenuHelp();
             }
-            else if(enter == true && y == 5)
+            else if (enter == true && y == 5)
             {
-                
+
             }
             else if (enter == true && y == 2)
             {
                 Console.Clear();
-                Alien.ScreenSettings();
-                Alien a = new Alien(1, 7);
-                for (int i = 0; i < 50; i++)
+                GameScreenSettings();
+                Alien a = new Alien(1, 1);
+                Lives l = new Lives(3);
+                l.setLives(1);
+                List<Alien> aliens = new List<Alien>();
+                aliens.Add(a);
+                aliens.Add(new Alien(16, 1));
+                aliens.Add(new Alien(31, 1));
+                while (l.GetLives != 3)
                 {
-                    a.x = i;
-                    a.Draw();
+                    //update model
+                    foreach(Alien alien in aliens)
+                    {
+                        alien.Move();
+                    }
+                    //render
+                    foreach (Alien alien in aliens)
+                    {
+                        alien.Draw();
+                    }
+
+                    //timing
+                    
                     Thread.Sleep(100);
                 }
 

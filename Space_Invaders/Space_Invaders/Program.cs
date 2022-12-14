@@ -12,7 +12,9 @@ namespace Space_Invaders
         static void Main(string[] args)
         {
             Menu m = new Menu();
+            Menu.MenuScreenSettings();
             m.DrawMenu(0, 2);
+
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Space_Invaders
         //alien y = 3 x = 6
         public int x = 0;
         public int y = 0;
+        public int direction;
         string[] alien = new string[7]{"               ",
                                        "  ▀▄       ▄▀  ",
                                        "   ▄█▀███▀█▄   ",
@@ -22,23 +23,24 @@ namespace Space_Invaders
         {
             this.x = x;
             this.y = y;
+            direction = 1;
         }
 
         public void Draw()
         {
-            
-            for(int i = 0; i <6; i++)
+             
+            for(int i = 0; i < 6; i++)
             {
                 Console.SetCursorPosition(x, y+i);
                 Console.Write(alien[i]);
             }
         }
 
-        public static void ScreenSettings()
+        internal void Move()
         {
-            Console.CursorVisible = false;
-            Console.BufferHeight = Console.WindowHeight = 50;
-            Console.BufferWidth = Console.WindowWidth = 110;
+            //x = x + direction;
+            x += direction;
+            
         }
     }
 }
