@@ -153,15 +153,22 @@ namespace Space_Invaders
                 ScreenSettings(50, 110);
                 Alien a = new Alien(1, 1);
                 Lives l = new Lives(3);
-                l.setLives(1);
+                Player p = new Player(35, 35);
+                l.setLives(3);
                 List<Alien> aliens = new List<Alien>();
                 aliens.Add(a);
                 aliens.Add(new Alien(16, 1));
                 aliens.Add(new Alien(31, 1));
-                while (l.GetLives != 3)
+                aliens.Add(new Alien(46, 1));
+                aliens.Add(new Alien(61, 1));
+                aliens.Add(new Alien(76, 1));
+                aliens.Add(new Alien(91, 1));
+                while (l.GetLives != 0)
                 {
+                    
+                    p.DrawPlayer();
                     //update model
-                    foreach(Alien alien in aliens)
+                    foreach (Alien alien in aliens)
                     {
                         alien.Move();
                     }
@@ -174,6 +181,7 @@ namespace Space_Invaders
                     //timing
                     
                     Thread.Sleep(100);
+                    Console.Clear();
                 }
 
                 Console.Read();
